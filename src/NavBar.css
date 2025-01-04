@@ -1,0 +1,30 @@
+/* src/NavBar.css */
+.navbar {
+    background-color: black;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    font-size: 1.2rem;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .navbar ul li a:hover {
+    color: #ccc;
+  }
+  
