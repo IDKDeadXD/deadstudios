@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: 'src',
+  root: 'src', // Set 'src' as the root
   build: {
-    outDir: '../build',
-    emptyOutDir: true,
+    outDir: '../public', // Output the build to the 'public' folder
+    emptyOutDir: true, // Clean the output directory before building
   },
-})
+});
