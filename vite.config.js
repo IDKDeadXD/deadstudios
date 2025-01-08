@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: './src',
   base: './', // Ensures relative paths for assets
   build: {
     outDir: 'dist', // Or 'build' if you changed it for Vercel
