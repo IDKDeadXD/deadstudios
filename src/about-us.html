@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link href="/css/tailwind.css" rel="stylesheet">
+  <style>
+    /* Custom styles for the sidebar */
+    #sidebar {
+      background-color: #2d2d2d;
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 20px;
+      border-right: 2px solid white;
+      z-index: 10; /* Make sure sidebar stays on top of content */
+    }
+    #sidebar a {
+      display: block;
+      padding: 15px;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #444;
+      transition: background-color 0.3s;
+    }
+    #sidebar a:hover {
+      background-color: #444;
+    }
+    /* Main content section */
+    .main-content {
+      margin-left: 250px; /* Give space for the sidebar */
+      padding: 20px;
+      margin-top: 60px; /* Offset content below navbar */
+    }
+    /* Navbar Styling */
+    nav {
+      background-color: #000;
+      color: white;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20; /* Ensure navbar stays on top */
+      border-bottom: 2px solid white;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Navbar Section -->
+  <nav>
+    <div class="container mx-auto flex items-center">
+      <a href="/" class="flex items-center space-x-2">
+        <img src="./assets/logo.png" alt="Logo" class="w-8 h-8">
+        <span class="text-2xl font-bold">Dead Studios</span>
+      </a>
+      <div class="ml-auto flex">
+        <a href="/" class="mr-6">Home</a>
+        <a href="/about" class="mr-6">About Us</a>
+        <a href="/projects" class="mr-6">Projects</a>
+        <a href="/contact" class="mr-6">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar Section -->
+  <div id="sidebar">
+    <a href="#mission" class="p-4">Mission Statement</a>
+    <a href="#team" class="p-4">Our Team</a>
+    <a href="#history" class="p-4">Our History</a>
+    <a href="#email" class="p-4">Email</a>
+    <a href="#phone" class="p-4">Phone</a>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="main-content">
+    <section id="mission" class="my-10">
+      <h2 class="text-3xl font-semibold">Mission Statement</h2>
+      <p class="mt-4">We aim to provide exceptional products for gamers around the world...</p>
+    </section>
+
+    <section id="team" class="my-10">
+      <h2 class="text-3xl font-semibold">Our Team</h2>
+      <p class="mt-4">Our team consists of dedicated professionals working to bring the best gaming experiences...</p>
+    </section>
+
+    <section id="history" class="my-10">
+      <h2 class="text-3xl font-semibold">Our History</h2>
+      <p class="mt-4">Started in 2023, Dead Studios has already made a huge impact in the gaming industry...</p>
+    </section>
+
+    <section id="email" class="my-10">
+      <h2 class="text-3xl font-semibold">Email</h2>
+      <p class="mt-4">You can reach us at: contact@deadstudios.com</p>
+    </section>
+
+    <section id="phone" class="my-10">
+      <h2 class="text-3xl font-semibold">Phone</h2>
+      <p class="mt-4">Call us at: +1 (234) 567-8901</p>
+    </section>
+  </div>
+
+  <script>
+    // Sidebar navigation functionality
+    const sidebarLinks = document.querySelectorAll('#sidebar a');
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        window.scrollTo({
+          top: targetSection.offsetTop - 60, // Offset for navbar height
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

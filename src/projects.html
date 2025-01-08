@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dead Studios - Projects</title>
+  <link href="/css/tailwind.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+    <nav class="absolute top-0 left-0 right-0 p-4 bg-black bg-opacity-80 z-20">
+        <div class="container mx-auto flex items-center">
+          <!-- Left Navbar Section -->
+          <a href="/" class="flex items-center space-x-2 text-white">
+            <img src="./assets/logo.png" alt="Logo" class="w-8 h-8">
+            <span class="text-2xl font-bold">Dead Studios</span>
+          </a>
+      
+          <div class="flex items-center space-x-4 ml-4"> <!-- Aligns links to the left with some margin -->
+            <span class="text-white">|</span> <!-- Separator between Dead Studios and Links -->
+            <a href="/" class="text-white text-lg font-semibold hover:underline">Home</a>
+          </div>
+        </div>
+      </nav>
+
+  <!-- Projects Section -->
+  <section class="bg-black text-white py-12 mt-24">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-8">Our Projects</h2>
+      
+      <div class="flex flex-wrap gap-8 justify-center" id="projects-container">
+        <!-- Project Cards will be dynamically added here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+    <div class="container mx-auto px-4 h-full flex items-center justify-center">
+      <div class="bg-gray-900 p-8 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start mb-6">
+          <h3 id="modalTitle" class="text-2xl font-bold"></h3>
+          <button onclick="closeModal()" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="modalContent" class="space-y-4">
+          <!-- Content will be dynamically loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function closeModal() {
+      document.getElementById('projectModal').classList.add('hidden');
+    }
+
+    function openProjectDetails(projectId) {
+      const modal = document.getElementById('projectModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      
+      // Show loading state
+      modalTitle.textContent = 'Loading...';
+      modalContent.innerHTML = '<div class="text-center">Loading project details...</div>';
+      modal.classList.remove('hidden');
+
+      // In a real implementation, you would fetch the data from your backend
+      // For now, we'll simulate fetching from MCPEDL
+      // You'll need to implement your own backend to properly fetch and parse the data
+      fetchProjectDetails(projectId);
+    }
+
+    async function fetchProjectDetails(projectId) {
+      // This is a placeholder for where you'd implement your actual data fetching
+      // You'll need a backend service to properly fetch and parse the MCPEDL data
+      const modalContent = document.getElementById('modalContent');
+      modalContent.innerHTML = `
+        <img src="project-image.jpg" alt="Project Image" class="w-full rounded-lg mb-4">
+        <h4 class="text-xl font-semibold mb-2">Description</h4>
+        <p class="text-gray-300">Project description would go here...</p>
+        <div class="mt-4">
+          <h4 class="text-xl font-semibold mb-2">Features</h4>
+          <ul class="list-disc list-inside text-gray-300">
+            <li>Feature 1</li>
+            <li>Feature 2</li>
+            <li>Feature 3</li>
+          </ul>
+        </div>
+        <div class="mt-4">
+          <a href="#" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-200">
+            Download
+          </a>
+        </div>
+      `;
+    }
+  </script>
+  
+  <script type="module" src="/js/projects.js"></script>
+</body>
+</html>
