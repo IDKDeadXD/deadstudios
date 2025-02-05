@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dead Studios</title>
-
+  <link href="/css/tailwind.css" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
@@ -42,20 +42,18 @@
       color: white;
     }
   </style>
-  <script type="module" crossorigin src="/assets/index-BfBz_AeZ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CI5LLR8T.css">
 </head>
 <body class="bg-black text-white">
 
   <!-- Background Section -->
-  <div class="relative h-screen bg-cover bg-center" style="background-image: url('/assets/background-image-B-eG9L64.jpg');">
+  <div class="relative h-screen bg-cover bg-center" style="background-image: url('/assets/background-image.jpg');">
     <div class="absolute inset-0 bg-gradient-to-b opacity-90"></div>
     
     <!-- Navbar -->
     <nav class="absolute top-0 left-0 right-0 p-4 bg-black bg-opacity-80 z-20">
       <div class="container mx-auto flex items-center">
         <a href="/" class="flex items-center space-x-2 text-white">
-          <img src="/assets/logo-BubO_5PW.png" alt="Logo" class="w-8 h-8">
+          <img src="/assets/logo.png" alt="Logo" class="w-8 h-8">
           <span class="text-2xl font-bold">Dead Studios</span>
         </a>
         <div class="flex items-center space-x-4 ml-4">
@@ -67,7 +65,7 @@
     
     <!-- Main Content -->
     <div class="relative z-10 h-full flex flex-col justify-center items-center text-center space-y-4">
-      <img src="https://i.imgur.com/bw3JWDB.png" alt="Dead Studios" class="max-w-full h-auto">
+      <img src="/assets/dead-studios-logo.png" alt="Dead Studios" class="max-w-full h-auto">
       <p class="text-lg text-white">Making bangers since 2023</p>
       <a href="https://discord.gg/msXyxcy275" target="_blank" class="mt-4 px-6 py-3 border-2 border-white text-white text-lg rounded-lg bg-white bg-opacity-10 backdrop-blur-md hover:bg-opacity-20">
         Join Our Discord
@@ -117,7 +115,7 @@
       <div>
         <h3 class="text-xl font-semibold mb-4 text-center">Contact Us</h3>
         <p class="text-center">
-          Email: <a href="mailto:contact@deadstudios.com" class="underline">contact@deadstudios.xyz</a>
+          Email: <a href="mailto:contact@deadstudios.xyz" class="underline">contact@deadstudios.xyz</a>
         </p>
         <p class="text-center">
           Discord: <a href="https://discord.gg/msXyxcy275" class="underline">https://discord.gg/msXyxcy275</a>
@@ -126,12 +124,13 @@
     </div>
     <div class="mt-9 border-t border-gray-600 pt-2 text-center">
       <p>&copy; 2025 Dead Studios. All rights reserved.</p>
-      <p>Website Designed By Dead</p>
+      <p>Website Designed by Dead</p>
       <p>Discord: lol.net</p>
     </div>
   </footer>
 
-
-  <script src="./js/bugReport.js"></script>
+  <!-- Scripts -->
+  <script type="module" src="/js/projects.js"></script>
+  <script src="/js/bugReport.js"></script>
 </body>
 </html>
