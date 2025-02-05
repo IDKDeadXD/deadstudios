@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: './src/',
-  base: './src/', // Ensures relative paths for assets
+  // Remove the root config since your index.html is in src/
+  base: '/', // Change this to '/' for production builds
   build: {
-    outDir: 'dist', // Or 'build' if you changed it for Vercel
+    outDir: '../dist', // Path is relative to root, so we need to go up one level
     emptyOutDir: true,
   },
 });
