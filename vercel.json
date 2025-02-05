@@ -1,13 +1,12 @@
 {
-    "version": 2,
-    "routes": [
-      { "handle": "filesystem" },
-      { "src": "/assets/(.*)", "dest": "/assets/$1" },
-      { "src": "/(.*)\\.js", "dest": "/$1.js" },
-      { "src": "/(.*)\\.css", "dest": "/$1.css" },
-      { "src": "/(.*)", "dest": "/index.html" }
-    ],
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist",
-    "cleanUrls": true
-  }
+  "version": 2,
+  "rewrites": [
+    { "source": "/assets/(.*)", "destination": "/assets/$1" },
+    { "source": "/(.*)\\.js", "destination": "/$1.js" },
+    { "source": "/(.*)\\.css", "destination": "/$1.css" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true
+}
